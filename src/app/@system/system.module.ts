@@ -3,6 +3,16 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { I18nLoader } from './i18n/i18n-loader';
 import * as moment from 'moment';
 import { indexOf } from 'lodash';
+import { AuthService } from '@system/auth/auth.service';
+import { AuthGuard } from '@system/guards/auth.guard';
+
+export const GUARDS: any = [
+  AuthGuard
+];
+
+export const SERVICES: any = [
+  AuthService
+];
 
 @NgModule({
   imports: [
@@ -16,7 +26,10 @@ import { indexOf } from 'lodash';
   exports: [
     TranslateModule
   ],
-  providers: [],
+  providers: [
+    ...GUARDS,
+    ...SERVICES
+  ]
 })
 export class SystemModule {
   private static systemInjector: Injector;
