@@ -15,7 +15,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "wkd",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -31,7 +31,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -94,7 +94,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           }
@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "wanikani-enhanced-dashboard"
+  "defaultProject": "wanikani-enhanced-dashboard",
+  "cli": {
+    "analytics": "801c948b-6102-44a8-b9e3-2bec3091b52a"
+  }
 }
