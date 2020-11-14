@@ -1,6 +1,6 @@
 import {TranslateLoader} from '@ngx-translate/core';
 import {Observable, of} from 'rxjs';
-import { en } from '../../i18n/en';
+import { en } from '../../../i18n/en';
 
 const langs: any = {
   en
