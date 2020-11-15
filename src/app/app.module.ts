@@ -9,6 +9,7 @@ import firebase from 'firebase/app';
 import { NbThemeModule } from '@nebular/theme';
 import { NgxRepositoryModule } from '@witty-services/ngx-repository';
 import { NgxHttpRepositoryModule } from '@witty-services/ngx-http-repository';
+import { NgxIndexedDbRepositoryModule } from './@ngx-indexed-db-repository/ngx-indexed-db-repository.module';
 import App = firebase.app.App;
 
 export function initializeApp(): App {
@@ -42,6 +43,7 @@ const PROVIDERS: Provider[] = [
     SystemModule,
     NbThemeModule.forRoot(),
     NgxHttpRepositoryModule,
+    NgxIndexedDbRepositoryModule,
     NgxRepositoryModule.forRoot({
       normalizerConfiguration: {
         normalizeNull: true

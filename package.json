@@ -32,6 +32,7 @@
     "firebase": "^8.0.2",
     "jwt-decode": "^3.1.1",
     "lodash": "^4.17.20",
+    "ngx-indexed-db": "^6.1.1",
     "rxfire": "^4.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
