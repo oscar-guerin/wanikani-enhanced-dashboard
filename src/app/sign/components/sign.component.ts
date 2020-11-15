@@ -31,8 +31,8 @@ export class SignComponent {
 
     this.authService.signIn(this.form.controls.wkToken.value);
     this.userService.getCurrentUser().pipe(
+      first(),
       ifNotNull(),
-      first()
     ).subscribe((user: User | null) => user ? this.router.navigate(['/', 'app', 'dashboard']) : void 0);
   }
 }

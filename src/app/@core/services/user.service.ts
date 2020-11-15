@@ -5,6 +5,7 @@ import { User } from '@core/models/user';
 import { Observable, of } from 'rxjs';
 import { TokenService } from '@system/services/token.service';
 import { catchError, defaultIfEmpty, map, switchMap } from 'rxjs/operators';
+import { softCache } from '@witty-services/rxjs-common';
 
 @Injectable()
 export class UserService {
@@ -25,6 +26,7 @@ export class UserService {
           })
         ) : of(null)
       ),
+      softCache()
     );
   }
 
