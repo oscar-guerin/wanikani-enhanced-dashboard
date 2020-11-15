@@ -8,7 +8,6 @@ import {
   NbContextMenuModule,
   NbDialogModule,
   NbFormFieldModule,
-  NbIconLibraries,
   NbIconModule,
   NbInputModule,
   NbLayoutModule,
@@ -21,8 +20,14 @@ import {
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { LayoutComponent } from '@shared/components/layout/layout.component';
+import { HeaderComponent } from '@shared/components/header/header.component';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
-const COMPONENTS: any[] = [];
+const COMPONENTS: any[] = [
+  LayoutComponent,
+  HeaderComponent
+];
 
 const MODULES: any[] = [
   CommonModule,
@@ -42,6 +47,7 @@ const MODULES: any[] = [
   NbSidebarModule.forRoot(),
   NbSpinnerModule,
   NbUserModule,
+  NbEvaIconsModule,
   ReactiveFormsModule,
   RouterModule,
   TranslateModule
@@ -64,23 +70,4 @@ const PIPES: any[] = [];
   ]
 })
 export class SharedModule {
-
-  public constructor(iconLibraries: NbIconLibraries) {
-    iconLibraries.registerFontPack('fab', {
-      packClass: 'fab'
-    });
-    iconLibraries.registerFontPack('fad', {
-      packClass: 'fad'
-    });
-    iconLibraries.registerFontPack('fal', {
-      packClass: 'fal'
-    });
-    iconLibraries.registerFontPack('far', {
-      packClass: 'far'
-    });
-    iconLibraries.registerFontPack('fas', {
-      packClass: 'fas'
-    });
-    iconLibraries.setDefaultPack('far');
-  }
 }

@@ -1,0 +1,15 @@
+<nb-layout>
+  <nb-sidebar containerFixed="false"
+              state="compacted">
+    <div class="d-flex align-items-center justify-content-center mb-4">
+      <nb-icon icon="bar-chart-outline"></nb-icon>
+    </div>
+    <nb-menu [items]="menuItems"></nb-menu>
+  </nb-sidebar>
+  <nb-layout-column>
+    <wkd-header>
+      <ng-content select="[toolbar]"></ng-content>
+    </wkd-header>
+    <ng-content></ng-content>
+  </nb-layout-column>
+</nb-layout>

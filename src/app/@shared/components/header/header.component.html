@@ -1,0 +1,16 @@
+<nb-card>
+  <nb-card-body class="d-flex justify-content-end overflow-hidden">
+    <ng-content></ng-content>
+    <div *ngIf="user$|async as user"
+         class="d-flex align-items-center ml-3">
+      <ng-container *ngIf="!!user.username && !!user.level">
+        <nb-user [name]="user.username"
+                 [title]="('header.level' | translate) + ' ' + user.level"
+                 badgeStatus="info"
+                 id="id_{{user.id}}"
+                 size="medium">
+        </nb-user>
+      </ng-container>
+    </div>
+  </nb-card-body>
+</nb-card>

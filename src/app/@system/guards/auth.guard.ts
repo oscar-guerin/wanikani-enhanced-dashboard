@@ -3,7 +3,6 @@ import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, Router, RouterSt
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { UserService } from '@core/services/user.service';
-import { log } from '@witty-services/rxjs-common';
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanActivateChild {
@@ -14,7 +13,6 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
   public canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     return this.userService.isAuthenticated().pipe(
-      log(10),
       tap((isAuthenticated: boolean) => !isAuthenticated ? this.router.navigate(['/', 'sign']) : void 0)
     );
   }
