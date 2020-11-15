@@ -3,15 +3,17 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { I18nLoader } from './i18n/i18n-loader';
 import * as moment from 'moment';
 import { indexOf } from 'lodash';
-import { AuthService } from '@system/auth/auth.service';
 import { AuthGuard } from '@system/guards/auth.guard';
+import { TokenService } from '@system/services/token.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from '@system/interceptors/auth.interceptor';
 
 export const GUARDS: any = [
   AuthGuard
 ];
 
 export const SERVICES: any = [
-  AuthService
+  TokenService
 ];
 
 @NgModule({
@@ -28,7 +30,12 @@ export const SERVICES: any = [
   ],
   providers: [
     ...GUARDS,
-    ...SERVICES
+    ...SERVICES,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ]
 })
 export class SystemModule {

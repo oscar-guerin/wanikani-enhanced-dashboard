@@ -1,0 +1,6 @@
+{
+  "/wanikani": {
+    "target": "https://api.wanikani.com/v2/",
+    "changeOrigin": true
+  }
+}
